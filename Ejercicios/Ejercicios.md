@@ -116,6 +116,74 @@ ___
 El último mainframe lanzado por IBM es el z14 y se estima un precio de 100.000$. El desembolso inicial sería mayor que el necesario para una granja web, aunque el gasto energético y el espacio ocupado será menor. IBM nos promete una disponibilidad del 99,999%. Además cifra el 100% de los datos de bases de datos y aplicaciones. Por contra, es más difícilmente escalable y un fallo en la máquina nos dejaría sin poder servir a los clientes.
 
 La conclusión final sería que para empresas grandes, los mainframes pueden ser muy útiles (sin despreciar las granjas web), pero para una mediana y pequeña empresa no tiene ningún sentido pagar por un mainframe, pues una granja web es suficientemente _"potente"_.
+
+#### Ejercicio T4.2:
+##### Buscar información sobre precio y características de balanceadores hardware específicos. Compara las prestaciones que ofrecen unos y otros.
+
+  - **TP-Link TL-R470T+**
+    - **Precio:** 44.15$
+    - **Puertos:**
+      - 1 puerto fijo WAN Ethernet
+      - 1 puerto fijo LAN Ethernet
+      - 3 Puertos cambiables Ethernet WAN / LAN
+    - **Memoria:** 128MB
+    - **Concurrencia:** 10,000 sesiones
+
+  - **TP-LINK TL-R480T**
+    - **Precio:** 75.59$
+    - **Puertos:**
+      - 1 puerto fijo WAN Ethernet
+      - 1 puerto fijo LAN Ethernet
+      - 3 Puertos cambiables Ethernet WAN / LAN
+    - **Memoria:** 128MB
+    - **Concurrencia:** 30,000 sesiones
+
+  - **TL-ER6020**
+    - **Precio:** 152.07$
+    - **Puertos:**
+      -  1 Puerto Gigabit WAN
+      -  3 Puertos Gigabit LAN/WAN
+      -  1 Puerto Gigabit LAN
+    - **Memoria:** 256MB
+    - **Concurrencia:** 40,000 sesiones
+
+  - **F5 Networks LTM-2000s**
+    - **Precio:** 17,995.00$
+    - **Puertos:**
+      - 8 puertos LAN
+      - 2 puertos Fibra
+    - **Memoria:** 8 GB
+    - **Concurrencia:** 500,000 sesiones
+
+  - **Citrix NetScaler MPX 10500 Enterprise Edition**
+      - **Precio:** 46,020.00
+      - **Puertos:**
+      - 2 puertos 10GBASE-X SFP+ AND
+      - 8 puertos 1000BASE-X SFP (fiber or copper)
+    - **Memoria:** 16 GB
+    - **Concurrencia:** 500,000
+
+    - **Citrix NetScaler MPX 10500 Platinum Edition**
+      - **Precio:** 71,500.00$
+      - Las mismas características que el anterior, solo cambian software y soporte.
+
+###### Especificaciones completas:
+
+- **[TP-Link TL-R470T+](https://www.tp-link.com/es/products/details/cat-4910_TL-R470T+.html#specifications)**
+- **[TP-LINK TL-R480T](https://www.tp-link.com/es/products/details/cat-4910_TL-R480T+.html#specifications)**
+- **[TL-ER6020](https://www.tp-link.com/es/products/details/cat-4909_TL-ER6020.html#specifications)**
+- **[F5 Networks LTM-2000s &&  F5 Networks LTM-2200s](https://worldtechit.com/f5-products/f5-big-ip-2000s-2200s-hardware-datasheet/)**
+- **[Citrix NetScaler](https://www.citrix.com/content/dam/citrix/en_us/documents/data-sheet/netscaler-data-sheet.pdf)**
+
+#### Ejercicio T4.3:
+##### Buscar información sobre los métodos de balanceo que implementan los dispositivos recogidos en el ejercicio 4.2
+
+_No hay datos disponibles._
+
+#### Ejercicio T4.4:
+##### Instala y configura en una máquina virtual el balanceador Zen Load Balancer.
+
+Actualmente Zen Load Balancer es conocido como Zevenet (Zen Load Balancer Next Generation). Por lo que procederé a instalar la última versión de Zevenet.
 ___
 
 ### Tema 5<a name="id5"></a>
