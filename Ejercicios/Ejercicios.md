@@ -244,7 +244,7 @@ Entonces tendremos disponible en el navegador el número de conexiones abiertas,
 
 En este caso,
 
-[Trabajo Wireshark](/../Trabajo Wireshark/Wireshark.pdf)
+[Trabajo Wireshark](SWAP/blob/master/Trabajo Wireshark/Wireshark.pdf)
 
 ___
 
