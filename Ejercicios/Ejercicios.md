@@ -180,14 +180,63 @@ La conclusión final sería que para empresas grandes, los mainframes pueden ser
 
 _No hay datos disponibles._
 
-#### Ejercicio T4.4:
-##### Instala y configura en una máquina virtual el balanceador Zen Load Balancer.
+#### Ejercicio T4.7:
+##### Buscar información sobre métodos y herramientas para implementar GSLB
 
-Actualmente Zen Load Balancer es conocido como Zevenet (Zen Load Balancer Next Generation). Por lo que procederé a instalar la última versión de Zevenet.
+**Métodos:** DNS Proxy y DNS Server.
+
 ___
 
 ### Tema 5<a name="id5"></a>
 
+#### Ejercicio T5.1:
+##### Buscar información sobre cómo calcular el número de conexiones por segundo.
+
+Podemos comprobarlo con la siguiente orden:
+
+- Para **HTTP**:
+
+
+    netstat | grep http | wc -l
+
+- Para **HTTPS**:
+
+
+    netstat | grep :443 | wc -l
+
+En ambos casos, debemos dividir el resultado entre el resultado del siguiente comando:
+
+    netstat -s | grep connections\ established
+
+Para hacer la comprobación en **apache** basta con ejecutar:
+
+    apache2ctl status | grep request/sec
+
+En **Nginx** tenemos que activar la recopilación de estadísticas en el fichero `nginx.conf`. Para ello debemos agregar el siguiente contenido:
+
+    location /nginx_status {
+        # Turn on stats
+        stub_status on;
+        access_log   off;
+        # only allow access from 192.168.56.100;
+        allow 192.168.56.100;
+        # allow all;
+        deny all;
+    }
+
+Donde `192.1685.56.100` es la IP a la que le permitimos el acceso a las estadísticas del servidor Nginx, en nuestro caso, la máquina administradora.
+
+A continuación recargamos Nginx con el comando:
+
+    service nginx reload
+
+Ahora si en nuestro navegador ponemos:
+
+    192.168.56.125/nginx_status
+
+Entonces tendremos disponible en el navegador el número de conexiones abiertas, de conexiones aceptadas, manejadas, y peticiones manejadas. Si dividimos el número de peticiones manejadas entre el número de conexiones manejadas, tendremos el número de conexiones abiertas por segundo.
+
+`Requests per connection = handles requests / handled connections`
 ___
 
 ### Tema 6<a name="id6"></a>
