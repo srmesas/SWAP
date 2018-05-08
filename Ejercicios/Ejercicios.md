@@ -237,6 +237,15 @@ Ahora si en nuestro navegador ponemos:
 Entonces tendremos disponible en el navegador el número de conexiones abiertas, de conexiones aceptadas, manejadas, y peticiones manejadas. Si dividimos el número de peticiones manejadas entre el número de conexiones manejadas, tendremos el número de conexiones abiertas por segundo.
 
 `Requests per connection = handles requests / handled connections`
+
+#### Ejercicio T5.2:
+
+##### Instalar wireshark y observar cómo fluye el tráfico de red en uno de los servidores web mientras se le hacen peticiones HTTP.
+
+En este caso,
+
+[Trabajo Wireshark](../Trabajo Wireshark/Wireshark.pdf)
+
 ___
 
 ### Tema 6<a name="id6"></a>
