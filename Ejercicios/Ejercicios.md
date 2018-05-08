@@ -242,10 +242,169 @@ Entonces tendremos disponible en el navegador el número de conexiones abiertas,
 
 ##### Instalar wireshark y observar cómo fluye el tráfico de red en uno de los servidores web mientras se le hacen peticiones HTTP.
 
-En este caso,
+En este caso, he realizado el [Trabajo Wireshark](../Trabajo%20Wireshark/Wireshark.pdf) de la propia asignatura, con Raúl Del Pozo Moreno.
 
-[Trabajo Wireshark](../Trabajo%20Wireshark/Wireshark.pdf)
+#### Ejercicio T5.2:
 
+##### Buscar información sobre características, disponibilidad para  diversos SO, etc de herramientas para monitorizar las prestaciones de un servidor.
+
+##### 1. top:
+
+Si ejecutamos el comando `top`, nos va a aparecer una interfaz en modo texto que se va a ir actualizando cada 3 segundos. Muestra un resumen del estado de nuestro sistema y la lista de procesos que se están ejecutando.
+
+En mi caso me ha mostrado esta salida en el terminal:
+
+![T501](./img/T5/01.PNG)
+
+A continuación, vamos a realizar un breve análisis.
+
+###### 1. Tiempo de actividad y carga media del sistema
+
+![T502](./img/T5/02.PNG)
+Esta primera línea nos muestra:
+
+  - Hora actual.
+  - Tiempo que ha estado el sistema encendido.
+  - Número de usuarios (mario y root).
+  - Carga media en intervalos de 5, 10 y 15 minutos respectivamente.
+
+###### 2. Tareas
+
+![T503](./img/T5/03.PNG)
+
+La segunda línea muestra el total de tareas y procesos, los cuales pueden estar en diferentes estados.
+
+  - **Ejecutar**(_Running_): procesos ejecutándose actualmente o preparados para ejecutarse.
+  - **Hibernar**(_Sleeping_): procesos dormidos esperando que ocurra algo (depende del proceso) para ejecutarse.
+  - **Detener**(_Stopped_): ejecución de proceso detenida.
+  - **Zombie**: el proceso no está siendo ejecutado. Estos procesos se quedan en este estado cuando el proceso que los ha iniciado muere (padre).
+
+###### 3. Estados de la CPU
+
+![T504](./img/T5/04.PNG)
+
+Esta línea nos muestra los porcentajes de uso del procesador diferenciado por el uso que se le de.
+
+  -  **Usuario**(*us*): tiempo de CPU de usuario.
+  -  **Sistema**(*sy*): tiempo de CPU del kernel.
+  -  **Adecuado**(*ni*):tiempo de CPU gastado en procesos de baja prioridad
+  -  **Inactivo**(*inact*): tiempo de CPU en procesos inactivos.
+  -  **En espera**(*wa*): tiempo de CPU en procesos en espera.
+  -  **Interrupciones de hardware**(*hi*): interrupciones de hardware.
+  -  **Interrupciones de software**(*si*): tiempo de CPU en interrupciones de software.
+
+
+###### 4. Memoria física
+![T505](./img/T5/05.PNG)
+
+  -  **Memoria total**(_total_).
+  -  **Memoria libre**(_free_).
+  -  **Memoria utilizada**(_used_).
+  -  **Memoria utilizada por buffer/cache**(_buff/cache_).
+
+###### 5. Memoria virtual
+![T506](./img/T5/06.PNG)
+
+  -  **Memoria total**(_total_).
+  -  **Memoria libre**(_free_).
+  -  **Memoria utilizada**(_used_).
+  -  **Memoria disponible**(_avail Mem_).
+
+###### 6. Columnas
+
+Ahora vamos a ver las diferentes columnas que nos encontramos al ejecutar el comando.
+
+![T507](./img/T5/07.PNG)
+
+  -  **PID**: es el identificador de proceso. Cada proceso tiene un identificador único.
+  -  **USUARIO**(_USER_): usuario propietario del proceso.
+  -  **PR**: prioridad del proceso. Si pone RT es que se está ejecutando en tiempo real.
+  -  **NI**: asigna la prioridad. Si tiene un valor bajo (hasta -20) quiere decir que tiene más prioridad que otro con valor alto (hasta 19).
+  -  **VIRT**: cantidad de memoria virtual utilizada por el proceso.
+  -  **RES**: cantidad de memoria RAM física que utiliza el proceso.
+  -  **SHR**: memoria compartida.
+  -  **S**(_ESTADO_): estado del proceso.
+  -  **%CPU**: porcentaje de CPU utilizado desde la última actualización.
+  -  **%MEM**: porcentaje de memoria física utilizada por el proceso desde la última actualización.
+  -  **HORA+**(_TIME+_): tiempo total de CPU que ha usado el proceso desde su inicio.
+  -  **COMMAND**: comando utilizado para iniciar el proceso.
+
+##### 2. vmstat
+
+###### 1. Comando `vmstat n`:
+Recopila las estadísticas de memoria virtual mediante el comando  con un intervalo de tiempo n en segundos.
+
+![T508](./img/T5/08.PNG)
+
+###### 2. Comando `vmstat -s`:
+Muestra cuántos eventos del sistema se produjeron desde la última vez que se inició el sistema.
+
+![T509](./img/T5/09.PNG)
+
+###### 3. Más opciones:
+
+![T510](./img/T5/10.PNG)
+
+##### 3. netstat:
+
+    netstat [-a] [-e] [-n] [-o] [-s] [-p PROTO] [-r] [interval]
+
+  -  Cuando se utiliza con el argumento `-a`, el comando netstat muestra todas las conexiones y los puertos en escucha de la máquina.    
+  -  Cuando se lo utiliza con el argumento `-e`, el comando netstat muestra las estadísticas Ethernet.    
+  -  Cuando se lo utiliza con el argumento `-n`, el comando netstat muestra las direcciones y los números de puerto en forma numérica, sin resolución de nombres.    
+  -  Cuando se lo utiliza con el argumento `-o`, el comando netstat indica el número del proceso asignado a la conexión.
+  -  Cuando se lo utiliza con el argumento `-p` seguido del nombre del protocolo (TCP, UPD o IP), el comando netstat muestra la información solicitada relacionada con el protocolo especificado.    
+  -  Cuando se lo utiliza con el argumento `-r`, el comando netstat muestra la tabla de enrutamiento.  
+  -  Cuando se lo utiliza con el argumento `-s`, el comando netstat muestra las estadísticas detalladas para cada protocolo.    
+  -  Por último, un intervalo opcional, `interval`, permite determinar el período de actualización de la información, en segundos. _El tiempo predeterminado es de 1 segundo._
+
+##### 4. Otras herramientas de monitorización:
+
+###### Zabbix:
+
+Zabbix es un Sistema de Monitorización de Redes, diseñado para monitorizar y registrar el estado de varios servicios de red, Servidores, y hardware de red.
+
+Zabbix ofrece varias opciones de monitorización:
+
+  -  Chequeos simples que pueden verificar la disponibilidad y el nivel de respuesta de servicios estándar como SMTP o HTTP sin necesidad de instalar ningún software sobre el host monitorizado.
+  -  Un agente Zabbix puede también ser instalado sobre máquinas UNIX y Windows para monitorizar estadísticas como carga de CPU, utilización de red, espacio en disco, etc.
+  -  Como alternativa a instalar el agente sobre los host, Zabbix incluye soporte para monitorizar vía protocolos SNMP, TCP y ICMP, como también sobre IPMI, JMX, SSH, telnet y usando parámetros de configuración personalizados. Zabbix soporta una variedad de mecanismos de notificación en tiempo real, incluyendo XMPP.
+
+Lanzado sobre los términos de la versión 2 de la GNU General Public License, Zabbix es Software Libre.
+
+###### Nagios:
+
+Nagios es un sistema de monitorización de redes ampliamente utilizado, de código abierto, que vigila los equipos (hardware) y servicios (software) que se especifiquen, alertando cuando el comportamiento de los mismos no sea el deseado. Entre sus características principales figuran la monitorización de servicios de red (SMTP, POP3, HTTP, SNMP...), la monitorización de los recursos de sistemas hardware (carga del procesador, uso de los discos, memoria, estado de los puertos...), independencia de sistemas operativos, posibilidad de monitorización remota mediante túneles SSL cifrados o SSH, y la posibilidad de programar plugins específicos para nuevos sistemas.
+
+Se trata de un software que proporciona una gran versatilidad para consultar prácticamente cualquier parámetro de interés de un sistema, y genera alertas, que pueden ser recibidas por los responsables correspondientes mediante (entre otros medios) correo electrónico y mensajes SMS, cuando estos parámetros exceden de los márgenes definidos por el administrador de red.
+
+###### AWStats:
+
+AWStats es una herramienta open source de informes de análisis web, apta para analizar datos de servicios de Internet como un servidor web, streaming, mail y FTP. AWstats analiza los archivos de log del servidor, y basándose en ellos produce informes HTML. Los datos son presentados visualmente en informes de tablas y gráficos de barra. Pueden crearse informes estáticos mediante una interfaz de línea de comando, y se pueden obtener informes on-demand a través de un navegador web, gracias a un programa CGI.
+
+AWStats soporta la mayoría de los formatos de archivos log de servidor web conocidos, entre ellos Apache (formato de log NCSA combinado/XLF/ELF o formato común/CLFt), WebStar, IIS (formato de log del W3C) y muchos otros formatos comunes de Internet.
+
+###### Cacti:
+
+Cacti es una herramienta para la generación de gráficos en red, diseñada para aprovechar el poder de almacenamiento y la funcionalidad para gráficas que poseen las aplicaciones RRDtool. Esta herramienta, desarrollada en PHP, provee un pooler ágil, plantillas de gráficos avanzadas, múltiples métodos para la recopilación de datos, y manejo de usuarios. Tiene una interfaz de usuario fácil de usar, que resulta conveniente para instalaciones del tamaño de una LAN, así como también para redes complejas con cientos de dispositivos.
+
+###### Munin:
+
+Munin es un programa que permite monitorizar uno o varios equipos. Además, presenta la información a través de un servidor web, está hecho en perl y permite el uso de plugins, lo cual lo hace realmente versátil. También muestra una gran cantidad de información mediante unas gráficas creadas con la librería gráfica RRDtool.
+
+###### Pandora FMS:
+
+Pandora FMS es un software de código abierto que sirve para monitorizar y medir todo tipo de elementos. Monitoriza sistemas, aplicaciones o dispositivos de red. Permite conocer el estado de cada elemento de un sistema a lo largo del tiempo ya que dispone de histórico de datos y eventos. Pandora FMS está orientado a grandes entornos, y permite gestionar con y sin agentes, varios miles de sistemas, por lo que se puede emplear en grandes clusters, centros de datos y redes de todo tipo.
+
+Pandora FMS puede detectar si una interfaz de red se ha caído, un ataque de "defacement" en una web, una pérdida de memoria en algún servidor de aplicaciones, o el movimiento de un valor del NASDAQ. Pandora FMS puede enviar SMS si un sistema falla o cuando las acciones de Google bajan de 500 dólares.
+
+Pandora FMS puede recoger información de cualquier sistema operativo, con agentes, específicos para cada plataforma, que recolectan datos y los envían al servidor. Hay agentes específicos para GNU/Linux, AIX, Solaris, HP-UX, BSD/IPSO, Windows y MAC OSX.
+
+Pandora FMS también puede monitorizar cualquier tipo de servicio TCP/IP, sin necesidad de instalar agentes, y monitorizar sistemas de red como balanceadores de carga, routers, switches, sistemas operativos, aplicaciones o impresoras si se necesita hacerlo de forma remota. Pandora FMS también soporta WMI para comunicarse directamente con sistemas windows de forma remota y SNMP (versiones 1,2 y 3) para recolectar datos o recibir traps de forma asíncrona.
+
+Algunos ejemplos de recursos comunes que pueden ser monitorizados con Pandora FMS son, la carga del procesador, el uso de disco y memoria, procesos que están corriendo en el sistema, eventos determinados en un log, factores ambientales como la temperatura, la luz o la humedad, valores de aplicaciones como determinados textos en una página web, y en general cualquier cosa que se pueda recolectar de forma automatizada.
+
+##### Estas son algunas de las herramientas más conocidas de monitorización, pero existen muchas más (libres y de pago), pero si buscamos información al respecto, no hay acuerdo en cuál o cuáles son los mejores.
 ___
 
 ### Tema 6<a name="id6"></a>
