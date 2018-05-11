@@ -408,7 +408,52 @@ Algunos ejemplos de recursos comunes que pueden ser monitorizados con Pandora FM
 ___
 
 ### Tema 6<a name="id6"></a>
+#### Ejercicio T6.1:
+##### Aplicar con iptables una política de denegar todo el tráfico en una de las máquinas de prácticas. Comprobar el funcionamiento.
 
+Primero debemos eliminar todas las reglas, ejecutando los siguientes comandos:
+
+    sudo iptables -F
+    sudo iptables -X
+    sudo iptables -Z
+    sudo iptables -t nat -F
+
+A continuación, para denegar todo el tráfico, debemos ejecutar:
+
+    sudo iptables -P INPUT DROP
+    sudo iptables -P OUTPUT DROP
+    sudo iptables -P FORWARD DROP
+
+Seguidamente, debemos reiniciar el servicio:
+
+    sudo service iptables restart
+
+Para comprobar que se han establecido las reglas, bastará con ejecutar:
+
+    sudo iptables -L -n -v
+
+##### Aplicar con iptables una política de permitir todo el tráfico en una de las máquinas de prácticas. Comprobar el funcionamiento.
+
+Primero debemos eliminar todas las reglas, ejecutando los siguientes comandos:
+
+    sudo iptables -F
+    sudo iptables -X
+    sudo iptables -Z
+    sudo iptables -t nat -F
+
+A continuación, para permitir todo el tráfico, debemos ejecutar:
+
+    sudo iptables -P INPUT ACCEPT
+    sudo iptables -P OUTPUT ACCEPT
+    sudo iptables -P FORWARD ACCEPT
+
+Seguidamente, debemos reiniciar el servicio:
+
+    sudo service iptables restart
+
+Para comprobar que se han establecido las reglas, bastará con ejecutar:
+
+    sudo iptables -L -n -v
 ___
 
 ### Tema 7<a name="id7"></a>
