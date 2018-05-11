@@ -454,6 +454,33 @@ Seguidamente, debemos reiniciar el servicio:
 Para comprobar que se han establecido las reglas, bastará con ejecutar:
 
     sudo iptables -L -n -v
+
+#### Ejercicio T6.2:
+##### Comprobar qué puertos tienen abiertos nuestras máquinas, su estado, y qué programa o demonio lo ocupa.
+
+Basta con ejecutar:
+
+    sudo netstat -tulpn
+
+Obtendremos una salida como esta:
+
+![T601](./img/T6/01.PNG)
+
+Si queremos comprobar solo quién escucha por un puerto o que puerto usa determinado servicio podemos hacer un _pipping_ a grep indicando qué buscamos.
+
+Por ejemplo, si queremos ver qué servicio escuha por el puerto 80, ejecutamos:
+
+    sudo netstat -tulpn | grep :80
+
+Y si, por ejemplo, queremos comprobar que puerto usa sshd, tenemos que ejecutar:
+
+      sudo netstat -tulpn | grep sshd
+
+Además podríamos también comprobar qué servicios usan cierto protocolo. Por ejemplo, si queremos ver qué servicios usan el protocolo tcp, debemos ejecutar:
+
+    sudo netstat -tulpn | grep tcp\
+
+_Nótese que hay un espacio representado por `"\ "`_.
 ___
 
 ### Tema 7<a name="id7"></a>
