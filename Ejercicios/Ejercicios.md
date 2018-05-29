@@ -8,16 +8,34 @@
 ### Índice ###
 
 - [Tema 1](#id1)
+    - [Ejercicio](#id11)
 - [Tema 2](#id2)
+    - [Ejercicio 2.1](#id21)
+    - [Ejercicio 2.2](#id22)
 - [Tema 3](#id3)
+    - [Ejercicio 3.1](#id31)
+    - [Ejercicio 3.2](#id32)
 - [Tema 4](#id4)
+    - [Ejercicio 4.1](#id41)
+    - [Ejercicio 4.2](#id42)
+    - [Ejercicio 4.3](#id43)
+    - [Ejercicio 4.6](#id46)
+    - [Ejercicio 4.7](#id47)
 - [Tema 5](#id5)
+    - [Ejercicio 5.1](#id51)
+    - [Ejercicio 5.2](#id52)
+    - [Ejercicio 5.3](#id53)
 - [Tema 6](#id6)
+    - [Ejercicio 6.1](#id61)
+    - [Ejercicio 6.2](#id62)
+    - [Ejercicio 6.3](#id63)
 - [Tema 7](#id7)
+    - [Ejercicio 7.1](#id71)
+    - [Ejercicio 7.2](#id72)
 ---
 
 ### Tema 1 <a name="id1"></a>
-#### Ejercicio:
+#### Ejercicio:<a name="id11"></a>
 ##### Buscar información sobre las tareas o servicios web para los que se usan más los programas que comentamos al principio de la sesión:
 
 **Apache:** es usado principalmente para servir páginas web estáticas y dinámicas en la web. Muchas aplicaciones web están diseñadas asumiendo como ambiente de implantación a Apache, o que utilizarán características propias de este servidor web.
@@ -34,7 +52,7 @@ ___
 
 ### Tema 2<a name="id2"></a>
 
-#### Ejercicio T2.1:
+#### Ejercicio T2.1:<a name="id21"></a>
 ##### Calcular la disponibilidad del sistema si tenemos dos réplicas de cada elemento (en total 3 elementos en cada subsistema).
 
 Partimos de un sistema formado por Web, Applications, Database, DNS, Firewall, Switch, un Data Center e ISP con las siguientes disponibilidades:
@@ -75,7 +93,7 @@ Si añadimos otra réplica tendremos:
 Replicando cada elemento por segunda vez, finalmente tenemos una disponibilidad del:
 (0.996625 \* 0.999 \* 0.9999999999 \* 0.999992 \* 0.996625 \* 0.999999 \* 0.9999999999 \* 0.999875) \* 100 =**99.213%**
 
-#### Ejercicio T2.2:
+#### Ejercicio T2.2: <a name="id22"></a>
 ##### Buscar frameworks y librerías para diferentes lenguajes que permitan hacer aplicaciones altamente disponibles con relativa facilidad.
 
 
@@ -88,7 +106,7 @@ ___
 
 ### Tema 3<a name="id3"></a>
 
-#### Ejercicio T3.1:
+#### Ejercicio T3.1:<a name="id31"></a>
 ##### Buscar con qué órdenes de terminal o herramientas gráficas  podemos configurar bajo Windows y bajo Linux el enrutamiento del tráfico de un servidor para pasar el tráfico desde una subred a otra.
 
 - **Terminal**
@@ -99,7 +117,7 @@ ___
  - **Linux:** [FirewallBuilder](https://www.howtoforge.com/configuring-source-and-destination-nat-with-firewall-builder).
  - **Windows:** [Servicios de enrutamiento](http://blogs.itpro.es/readyplayerone/2015/10/03/servicios-de-enrutamiento-en-windows-server-2016/).
 
-#### Ejercicio T3.2:
+#### Ejercicio T3.2:<a name="id32"></a>
 ##### Buscar con qué órdenes de terminal o herramientas gráficas  podemos configurar bajo Windows y bajo Linux el filtrado y bloqueo de paquetes.
 
 - **Terminal**
@@ -111,13 +129,13 @@ ___
 - **Windows:** [Windows Firewall Defender --> Configuración avanzada](https://www.solvetic.com/tutoriales/article/3070-como-crear-reglas-firewall-windows-server-2016/). También se abre si ejecutamos en el terminal `wf.msc`.
 
 ### Tema 4<a name="id4"></a>
-#### Ejercicio T4.1:
+#### Ejercicio T4.1:<a name="id41"></a>
 ##### Buscar información sobre cuánto costaría en la actualidad un mainframe. Comparar precio y potencia entre esa máquina y una granja web de unas prestaciones similares
-El último mainframe lanzado por IBM es el z14 y se estima un precio de 100.000$. El desembolso inicial sería mayor que el necesario para una granja web, aunque el gasto energético y el espacio ocupado será menor. IBM nos promete una disponibilidad del 99,999%. Además cifra el 100% de los datos de bases de datos y aplicaciones. Por contra, es más difícilmente escalable y un fallo en la máquina nos dejaría sin poder servir a los clientes.
+El último mainframe lanzado por IBM es el z14 del cual se desconoce el precio, pero se estima en torno a 100.000$. El desembolso inicial sería mayor que el necesario para una granja web, aunque el gasto energético y el espacio ocupado será menor. IBM nos promete una disponibilidad del 99,999%. Además cifra el 100% de los datos de bases de datos y aplicaciones. Por contra, es más difícilmente escalable y un fallo en la máquina nos dejaría sin poder servir a los clientes.
 
 La conclusión final sería que para empresas grandes, los mainframes pueden ser muy útiles (sin despreciar las granjas web), pero para una mediana y pequeña empresa no tiene ningún sentido pagar por un mainframe, pues una granja web es suficientemente _"potente"_.
 
-#### Ejercicio T4.2:
+#### Ejercicio T4.2:<a name="id42"></a>
 ##### Buscar información sobre precio y características de balanceadores hardware específicos. Compara las prestaciones que ofrecen unos y otros.
 
   - **TP-Link TL-R470T+**
@@ -175,12 +193,27 @@ La conclusión final sería que para empresas grandes, los mainframes pueden ser
 - **[F5 Networks LTM-2000s &&  F5 Networks LTM-2200s](https://worldtechit.com/f5-products/f5-big-ip-2000s-2200s-hardware-datasheet/)**
 - **[Citrix NetScaler](https://www.citrix.com/content/dam/citrix/en_us/documents/data-sheet/netscaler-data-sheet.pdf)**
 
-#### Ejercicio T4.3:
+#### Ejercicio T4.3:<a name="id43"></a>
 ##### Buscar información sobre los métodos de balanceo que implementan los dispositivos recogidos en el ejercicio 4.2
 
 _No hay datos disponibles._
 
-#### Ejercicio T4.7:
+#### Ejercicio T4.6:<a name="id46"></a>
+##### Buscar información sobre los bloques de IP para los distintos países o continentes
+
+Existen múltiples webs para comprobar nuestra IP, como la siguiente:
+
+https://www.iplocation.net/
+
+Además esta web nos ofrece un listado por paises de las direcciones IP:
+
+https://lite.ip2location.com/ip-address-ranges-by-country
+
+Existen además funciones (`PHP`, `Python`) para poder geolocalizar IP's. Por ejemplo, tenemos la función `GEO IP` de `PHP`:
+
+http://php.net/manual/es/book.geoip.php
+
+#### Ejercicio T4.7:<a name="id47"></a>
 ##### Buscar información sobre métodos y herramientas para implementar GSLB
 
 **Métodos:** DNS Proxy y DNS Server.
@@ -189,7 +222,7 @@ ___
 
 ### Tema 5<a name="id5"></a>
 
-#### Ejercicio T5.1:
+#### Ejercicio T5.1:<a name="id51"></a>
 ##### Buscar información sobre cómo calcular el número de conexiones por segundo.
 
 Podemos comprobarlo con la siguiente orden:
@@ -238,13 +271,13 @@ Entonces tendremos disponible en el navegador el número de conexiones abiertas,
 
 `Requests per connection = handles requests / handled connections`
 
-#### Ejercicio T5.2:
+#### Ejercicio T5.2:<a name="id52"></a>
 
 ##### Instalar wireshark y observar cómo fluye el tráfico de red en uno de los servidores web mientras se le hacen peticiones HTTP.
 
 En este caso, he realizado el [Trabajo Wireshark](../Trabajo%20Wireshark/Wireshark.pdf) de la propia asignatura, con Raúl Del Pozo Moreno.
 
-#### Ejercicio T5.2:
+#### Ejercicio T5.3:<a name="id53"></a>
 
 ##### Buscar información sobre características, disponibilidad para  diversos SO, etc de herramientas para monitorizar las prestaciones de un servidor.
 
@@ -408,7 +441,7 @@ Algunos ejemplos de recursos comunes que pueden ser monitorizados con Pandora FM
 ___
 
 ### Tema 6<a name="id6"></a>
-#### Ejercicio T6.1:
+#### Ejercicio T6.1:<a name="id61"></a>
 ##### Aplicar con iptables una política de denegar todo el tráfico en una de las máquinas de prácticas. Comprobar el funcionamiento.
 
 Primero debemos eliminar todas las reglas, ejecutando los siguientes comandos:
@@ -455,7 +488,7 @@ Para comprobar que se han establecido las reglas, bastará con ejecutar:
 
     sudo iptables -L -n -v
 
-#### Ejercicio T6.2:
+#### Ejercicio T6.2:<a name="id62"></a>
 ##### Comprobar qué puertos tienen abiertos nuestras máquinas, su estado, y qué programa o demonio lo ocupa.
 
 Basta con ejecutar:
@@ -481,8 +514,53 @@ Además podríamos también comprobar qué servicios usan cierto protocolo. Por 
     sudo netstat -tulpn | grep tcp\
 
 _Nótese que hay un espacio representado por `"\ "`_.
+
+#### Ejercicio T6.3:<a name="id63"></a>
+##### Buscar información acerca de los tipos de ataques más comunes en servidores web (p.ej. secuestros de sesión). Detallar en qué consisten, y cómo se pueden evitar.
+
+##### 1. Inyección SQL (SQLi):
+
+Es un método de infiltración de código intruso que se vale de una vulnerabilidad informática presente en una aplicación en el nivel de validación de las entradas para realizar operaciones sobre una base de datos. El origen de la vulnerabilidad radica en el incorrecto chequeo o filtrado de las variables utilizadas en un programa que contiene, o bien genera, código SQL.
+
+Se conoce como Inyección SQL, indistintamente, al tipo de vulnerabilidad, al método de infiltración, al hecho de incrustar código SQL intruso y a la porción de código incrustado.
+
+##### 2. DDoS:
+
+Es un ataque a un sistema de computadoras o red que causa que un servicio o recurso sea inaccesible a los usuarios legítimos. Normalmente provoca la pérdida de la conectividad con la red por el consumo del ancho de banda de la red de la víctima o sobrecarga de los recursos computacionales del sistema atacado.
+
+Se lleva a cabo generando un gran flujo de información desde varios puntos de conexión hacia un mismo punto de destino. La forma más común de realizar un DDoS es a través de una red de bots, siendo esta técnica el ciberataque más usual y eficaz por su sencillez tecnológica.
+
+##### 3. Cross-Site Scripting (XSS):
+
+Permite a una tercera persona inyectar en páginas web visitadas por el usuario código JavaScript o en otro lenguaje similar. Es posible encontrar una vulnerabilidad de Cross-Site Scripting en aplicaciones que tengan entre sus funciones presentar la información en un navegador web u otro contenedor de páginas web. Sin embargo, no se limita a sitios web disponibles en Internet, ya que puede haber aplicaciones locales vulnerables a XSS, o incluso el navegador en sí.
+
+##### 4. Ataque de fuerza bruta:
+
+Es la forma de recuperar una clave probando todas las combinaciones posibles hasta encontrar aquella que permite el acceso.
+
+Hoy en día es un ataque poco efectivo pues existen aplicaciones como _Fail2ban_ que restrigen o bloquean accesos fallados.
+
 ___
 
 ### Tema 7<a name="id7"></a>
+
+#### Ejercicio T7.1:<a name="id71"></a>
+##### ¿Qué tamaño de unidad de unidad RAID se obtendrá al configurar un RAID 0 a partir de dos discos de 100 GB y 100 GB?
+
+La unidad RAID tendrá 100 GB + 100 GB = 200 GB.
+
+##### ¿Qué tamaño de unidad de unidad RAID se obtendrá al configurar un RAID 0 a partir de tres discos de 200 GB cada uno?
+
+La unidad RAID tendrá 200 GB/disco * 3 discos = 600 GB.
+
+#### Ejercicio T7.2:<a name="id72"></a>
+##### ¿Qué tamaño de unidad de unidad RAID se obtendrá al configurar un RAID 1 a partir de dos discos de 100 GB y 100 GB?
+
+La unidad RAID tendrá 100 GB, porque los otros 100 GB son una réplica del otro disco.
+
+##### ¿Qué tamaño de unidad de unidad RAID se obtendrá al configurar un RAID 1 a partir de tres discos de 200 GB cada uno?
+
+La unidad RAID tendrá 200 GB, porque los datos están replicados.
+
 
 ___
